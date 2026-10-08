@@ -67,7 +67,7 @@ All training data are publicly available and should be placed under `$RAGENOME_D
 
 1. **Human Genome** (`genomes/hg38_softmasked.fa`): Download the soft-masked hg38 assembly from [here](https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz).
 2. **Whole-Genome Alignment** (`msa/99.zarr/`): The 100-way multiz alignment released with GPN-MSA in [`songlab/multiz100way-pigz`](https://huggingface.co/datasets/songlab/multiz100way-pigz).
-3. **Conservation scores** (`conservation/hg38.phastCons100way.bw`): Download them from [`here`](https://hgdownload.soe.ucsc.edu/goldenPath/hg38/phastCons100way/hg38.phastCons100way.bw).
+3. **Conservation scores** (`conservation/hg38.phastCons100way.bw`): Download them from [here](https://hgdownload.soe.ucsc.edu/goldenPath/hg38/phastCons100way/hg38.phastCons100way.bw).
 4. **Species metadata** (`metadata/`, already included in this repository):
    * `clades.json`: the phylogenetic clades of the 100 alignment species from GPN-Star.
    * `species_lineages/species.txt`: the alignment species in column order (column 0 is human).
@@ -99,7 +99,7 @@ python scripts/train.py -cn pretraining run_name=stage \
 | 1 | 1,024 | 24,000 | 0.05 | `training_windows_1024_top5pct.bed` |
 | 2 | 1,024 | 24,000 | 0.4 | `training_windows_1024_top40pct.bed` |
 | 3 | 4,096 | 80,000 | 0.4 | `training_windows_4096_top40pct.bed` |
-| 4 | 13,312 | 80,000 | all windows | `training_windows_13312_full_pool.bed` |
+| 4 | 13,312 | 80,000 | 1.0 | `training_windows_13312_full_pool.bed` |
 
 ## Get in touch
 
