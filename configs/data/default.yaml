@@ -1,0 +1,12 @@
+defaults:
+  - dataset: default
+  - _self_
+
+_target_: ragenome.data.datamodule.RetrievalDataModule
+batch_size: 1
+num_workers: 4
+pin_memory: False
+sequence_mask_fn: ${sequence_mask}
+pad_collator:
+  _target_: ragenome.loading.collators.msa_variable_collate_fn
+  _partial_: true

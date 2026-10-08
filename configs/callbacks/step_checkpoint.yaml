@@ -1,0 +1,11 @@
+step_checkpoint:
+  _target_: lightning.pytorch.callbacks.ModelCheckpoint
+  dirpath: ${paths.output_dir}/checkpoints
+  filename: "periodic_step_{step}"
+  monitor: null
+  save_last: False
+  save_top_k: -1          # keep all step checkpoints
+  every_n_train_steps: 5000
+  every_n_epochs: null
+  auto_insert_metric_name: False
+  save_weights_only: False

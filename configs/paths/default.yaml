@@ -1,0 +1,4 @@
+data_dir: ${oc.env:RAGENOME_DATA_DIR}
+log_dir: ${oc.env:RAGENOME_LOG_DIR,./runs}
+output_dir: ${hydra:runtime.output_dir}
+work_dir: ${hydra:runtime.cwd}

@@ -1,0 +1,8 @@
+_target_: ragenome.models.nn.ragenome_transformer.RAGenomeTransformer
+dim: 1024
+local_depth: 3
+cross_depth: 3
+sliding_window: 512
+heads: 16
+dim_head: 64
+rotary_emb_dim: 32

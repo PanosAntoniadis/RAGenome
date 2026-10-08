@@ -1,0 +1,9 @@
+data_dir: ${paths.data_dir}
+genome: genomes/hg38_softmasked.fa
+segment_length: 13312
+samples_per_epoch: 50000
+msa_path: ${paths.data_dir}/msa/99.zarr
+clade_path: ${paths.work_dir}/metadata/clades.json
+species_lineages_dir: ${paths.work_dir}/metadata/species_lineages
+training_windows_path: ???
+species_budget: 80000

@@ -1,0 +1,6 @@
+_target_: ragenome.loading.DataCollatorForLanguageModelingSpan
+tokenizer: ragenome/tokenizers
+mlm: True
+mlm_probability: 0.15
+min_span: 3
+max_span: 6
