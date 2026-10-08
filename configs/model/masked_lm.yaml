@@ -1,2 +1,3 @@
 _target_: ragenome.models.MaskedLM
 downweight_lowercase: true
+init_from: null

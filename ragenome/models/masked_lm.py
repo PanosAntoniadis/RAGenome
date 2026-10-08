@@ -15,6 +15,7 @@ class MaskedLM(LightningModule):
         optimizer,
         lr_scheduler=None,
         downweight_lowercase: bool = False,
+        init_from: str = None,
     ):
         super().__init__()
         self.nn = nn
@@ -22,6 +23,9 @@ class MaskedLM(LightningModule):
         self.optimizer = optimizer
         self.lr_scheduler = lr_scheduler
         self.downweight_lowercase = downweight_lowercase
+        if init_from is not None:
+            state_dict = torch.load(init_from, map_location="cpu", weights_only=False)["state_dict"]
+            self.load_state_dict(state_dict)
 
     def _forward(self, batch: dict) -> torch.Tensor:
         return self.nn(
