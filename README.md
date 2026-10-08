@@ -40,6 +40,12 @@ model = AutoModel.from_pretrained("pantoniadis/RAGenome", trust_remote_code=True
 > [!TIP]
 > Always pass retrieved homologous sequences to `model.forward(...)`. The pretrained model was trained with retrieval present, and performance depends heavily on it: see Figure 7 in the supplementary material.
 
+An end-to-end example that builds the retrieval inputs from the whole-genome alignment and runs the model is in [`scripts/inference.py`](scripts/inference.py):
+
+```bash
+python scripts/inference.py --chrom 1 --pos 1000000 --data_dir $RAGENOME_DATA_DIR
+```
+
 ## Installation
 
 Clone the repository:
@@ -85,7 +91,7 @@ python scripts/compute_training_windows.py --bw $RAGENOME_DATA_DIR/conservation/
 
 The script slides a window of `--window` bases along every chromosome in steps of `--stride`, and scores each window by the 75th percentile of the PhastCons values (`--bw`) of its bases. Windows in which more than half of the bases have no score are discarded. It writes to `--out` (a BED file with columns chrom, start, end, score, and a flag that is 1 for top-scoring windows and 0 for random ones) the `--top_frac` fraction of windows with the highest scores, plus a random 0.1% of the remaining windows.
 
-The four stages use the same command and differ only in the values below:
+The four stages use the same training command and differ only in the values below:
 
 ```bash
 python scripts/train.py -cn pretraining run_name=stage \
