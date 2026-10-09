@@ -1,5 +1,7 @@
 # RAGenome: Scaling Retrieval-Based Genomic Language Models to Long Contexts
 
+[![arXiv](https://img.shields.io/badge/arXiv-2610.11761-b31b1b.svg)](https://arxiv.org/abs/2610.11761)
+
 RAGenome is a retrieval-based gLM that scales pretraining to longer context windows through an efficient retrieval mechanism. For each query sequence, RAGenome retrieves homologous sequences from a whole-genome alignment (WGA), removes gap tokens while keeping each token's original alignment column and restricts retrieval to a fixed token budget using the phylogenetic tree.
 
 ![RAGenome overview](assets/ragenome.png)
